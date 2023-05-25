@@ -72,7 +72,7 @@ void Display(unsigned int n) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void main() {
-	//Thiet lap các chan dieu khien dong co DC
+	//Thiet lap cac chan dieu khien dong co DC
 	EnA = 1; 
 	In1 = 0; 
 	In2 = 1;	
@@ -142,17 +142,17 @@ void ngat() interrupt 3{
 			count++;
 		}
 		else {
-			if (F_do > F_xanhlam && F_do > F_xanhluc) {
+			if ( ((F_do < 35) && (F_do > 25)) && ((F_xanhlam < 25) && (F_xanhlam > 15)) && ((F_xanhluc < 15) && (F_xanhluc > 5)) )	{
 			control_pin=1;
 			Delay_servo(0);
 			control_pin=0;
 			}
-			if (F_xanhlam > F_do && F_xanhlam > F_xanhluc) {
+			if ( ((F_do < 15) && (F_do > 5)) && ((F_xanhlam < 35) && (F_xanhlam > 25)) && ((F_xanhluc < 25) && (F_xanhluc > 15)) )	{
 			control_pin=1;
 			Delay_servo(1478);
 			control_pin=0;
 			}
-			if (F_xanhluc > F_do && F_xanhluc > F_xanhlam) {
+			if ( ((F_do < 25) && (F_do > 15)) && ((F_xanhlam < 15) && (F_xanhlam > 5)) && ((F_xanhluc < 35) && (F_xanhluc > 25)) )	{
 			control_pin=1;
 			Delay_servo(2700);
 			control_pin=0;
