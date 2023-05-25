@@ -144,17 +144,17 @@ void ngat() interrupt 3{
 		else {
 			if ( ((F_do < 35) && (F_do > 25)) && ((F_xanhlam < 25) && (F_xanhlam > 15)) && ((F_xanhluc < 15) && (F_xanhluc > 5)) )	{
 			control_pin=1;
-			Delay_servo(0);
+			Delay_servo(1000);
 			control_pin=0;
 			}
 			if ( ((F_do < 15) && (F_do > 5)) && ((F_xanhlam < 35) && (F_xanhlam > 25)) && ((F_xanhluc < 25) && (F_xanhluc > 15)) )	{
 			control_pin=1;
-			Delay_servo(1478);
+			Delay_servo(1500);
 			control_pin=0;
 			}
 			if ( ((F_do < 25) && (F_do > 15)) && ((F_xanhlam < 15) && (F_xanhlam > 5)) && ((F_xanhluc < 35) && (F_xanhluc > 25)) )	{
 			control_pin=1;
-			Delay_servo(2700);
+			Delay_servo(2000);
 			control_pin=0;
 			}
 			count=0;
